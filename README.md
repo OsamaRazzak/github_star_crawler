@@ -1,13 +1,22 @@
-# GitHub Stars Crawler
+# GitHub Star Crawler
 
-This repository crawls GitHub repositories via GraphQL API and stores star counts in PostgreSQL.  
-It is designed to crawl a large number of repos while respecting rate limits and allowing flexible metadata storage.
+## Overview
+Automated system to crawl and store GitHub repository data using GitHub Actions.
 
-## Local Setup
+## Features
+- Crawls 100,000+ repos with pagination
+- Rate-limit handling with automatic retries
+- PostgreSQL storage with upsert logic
+- Daily scheduled runs via GitHub Actions
+- CSV export as artifacts
 
-1. Create a Python virtual environment and install dependencies:
+## Architecture
+- **Data Source:** GitHub GraphQL API
+- **Database:** PostgreSQL (service container in Actions)
+- **Orchestration:** GitHub Actions (daily cron + manual trigger)
+- **Export:** CSV artifacts stored in Actions
 
-```bash
-pip install -r requirements.txt
-
-```
+## Setup
+1. Add `GH_TOKEN` secret (GitHub PAT with repo read access)
+2. Workflow triggers automatically on push/schedule
+3. Download results from Actions artifacts

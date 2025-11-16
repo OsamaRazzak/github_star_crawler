@@ -47,10 +47,12 @@ def main():
             "SELECT repo_id, full_name, owner, name, stars, url, created_at, repo_updated_at, last_crawled_at FROM repos",
             conn
         )
+        os.makedirs("export", exist_ok=True)
+
         out = "export/repos_dump.csv"
         df.to_csv(out, index=False)
-        logger.info("Exported to", out)
 
+        logger.info(f"Exported to {out}")
 
 if __name__ == "__main__":
     main()
