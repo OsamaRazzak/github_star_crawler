@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 GQL_URL = "https://api.github.com/graphql"
-TOKEN = os.getenv("GITHUB_TOKEN")  # GitHub Actions token or local token
+TOKEN = os.getenv("GH_TOKEN")  # GitHub Actions token or local token
 
 # Default headers
 HEADERS = {

@@ -27,7 +27,7 @@ jobs:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
       TARGET_TOTAL: 100000
       STEP_DAYS: 7
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
       - name: Checkout
